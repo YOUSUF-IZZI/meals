@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "570979417028",
+    "project_id": "task-two-944fe",
+    "storage_bucket": "task-two-944fe.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:570979417028:android:fba90d354a9b035d7f4291",
+        "android_client_info": {
+          "package_name": "com.example.task_two"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "570979417028-4c86q0sp9fonvtb2hjep8itac7t8tpn7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDO8Rv0GC2g_vrcVKLmSEncqV4V_jvnl74"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "570979417028-4c86q0sp9fonvtb2hjep8itac7t8tpn7.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "570979417028-et6jl61vj9inrt609j4f0ov6mjgf9pb5.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.taskTwo"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
