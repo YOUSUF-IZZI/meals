@@ -15,7 +15,9 @@ import 'package:task_two/src/features/recipes/providers/recipes_providers.dart';
 
 
 class AddRecipePage extends ConsumerWidget {
-  RecipeService recipeService = RecipeService();
+  AddRecipePage({super.key});
+
+  final RecipeService recipeService = RecipeService();
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final recipeFormGroup = ref.watch(recipeFormGroupProvider);
@@ -62,7 +64,7 @@ class AddRecipePage extends ConsumerWidget {
                             context.pop();
                           },
                         ),
-                        SizedBox(height: 50.h,),
+                        SizedBox(height: 200.h,),
                       ],
                     ),
                   ),

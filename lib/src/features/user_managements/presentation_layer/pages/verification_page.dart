@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:go_router/go_router.dart';
 import 'package:reactive_forms/reactive_forms.dart';
 import 'package:task_two/src/common/common_widgets/custom_form_field_widget.dart';
 import 'package:task_two/src/common/common_widgets/procced_button_widget.dart';
@@ -56,9 +55,11 @@ class VerificationPage extends ConsumerWidget {
                       ProccedButton(
                           buttonName: 'Next',
                           onPressed: () {
-                            context.go('/RegisterPage/VerificationPage/GenderPage');
+                            //context.go('/RegisterPage/VerificationPage/GenderPage');
+                            services.movingFromVerificationPage(formProvider, context);
                           }
                       ),
+                      SizedBox(height: 300.h,)
                     ],
                   ),
                 ),

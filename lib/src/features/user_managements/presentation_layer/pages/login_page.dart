@@ -12,7 +12,7 @@ import 'package:task_two/src/features/user_managements/providers/providers.dart'
 class LoginPage extends ConsumerWidget {
   LoginPage({Key? key}) : super(key: key);
 
-  UserServices services = UserServices();
+  final UserServices services = UserServices();
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final fromProvider = ref.watch(loginPageFormGroupProvider);
@@ -30,48 +30,51 @@ class LoginPage extends ConsumerWidget {
               ),
               child: ReactiveForm(
                 formGroup: fromProvider,
-                child: ListView(
-                  children: [
-                    Image.asset('assets/images/Logo.png',height: 113.h,width: 178.w,),
-                    SizedBox(height: 58.h,),
-                    Text('Login', style: TextStyle(color: Color(0xff001F29),fontSize: 24.sp, fontWeight: FontWeight.w700),textAlign: TextAlign.center,),
-                    SizedBox(height: 17.h,),
-                    Text('Please enter your email or phone number and password,\nyou can reset your password,\nwe will send you reset instruction to your email', style: TextStyle(color: Color(0xff575E71), fontWeight: FontWeight.w500, fontSize: 12.sp), textAlign: TextAlign.center,),
-                    SizedBox(height: 62.h,),
-                    CustomFormField(
-                      labeltText: '   Email',
-                      formControlName: 'email',
-                    ),
-                    SizedBox(height: 13.h,),
-                    CustomFormField(
-                      labeltText: '   Password',
-                      formControlName: 'password',
-                    ),
-                    SizedBox(height: 13.h,),
-                    ProccedButton(
-                      buttonName: 'Login',
-                      onPressed: ()async {
-                        await services.login(fromProvider, context);
-                      },
-                    ),
-                    SizedBox(height: 13.h,),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        GestureDetector(
-                          child: Text('Reset Password', style: TextStyle(color: Color(0xffBA1A1A), fontWeight: FontWeight.w400, fontFamily: 'Recoleta'),),
-                          onTap: () async {},
-                        ),
-                        Text(' or ', style: TextStyle(color: Color(0xff74777F)),),
-                        GestureDetector(
-                          child: Text('Create Account', style: TextStyle(color: Color(0xff005AC1), fontWeight: FontWeight.w400, fontFamily: 'Recoleta'),),
-                          onTap: (){
-                            context.go('/RegisterPage');
-                          },
-                        )
-                      ],
-                    )
-                  ],
+                child: SingleChildScrollView(
+                  child: Column(
+                    children: [
+                      Image.asset('assets/images/Logo.png',height: 113.h,width: 178.w,),
+                      SizedBox(height: 58.h,),
+                      Text('Login', style: TextStyle(color: Color(0xff001F29),fontSize: 24.sp, fontWeight: FontWeight.w700),textAlign: TextAlign.center,),
+                      SizedBox(height: 17.h,),
+                      Text('Please enter your email or phone number and password,\nyou can reset your password,\nwe will send you reset instruction to your email', style: TextStyle(color: Color(0xff575E71), fontWeight: FontWeight.w500, fontSize: 12.sp), textAlign: TextAlign.center,),
+                      SizedBox(height: 62.h,),
+                      CustomFormField(
+                        labeltText: '   Email',
+                        formControlName: 'email',
+                      ),
+                      SizedBox(height: 13.h,),
+                      CustomFormField(
+                        labeltText: '   Password',
+                        formControlName: 'password',
+                      ),
+                      SizedBox(height: 13.h,),
+                      ProccedButton(
+                        buttonName: 'Login',
+                        onPressed: ()async {
+                          await services.login(fromProvider, context);
+                        },
+                      ),
+                      SizedBox(height: 13.h,),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          GestureDetector(
+                            child: Text('Reset Password', style: TextStyle(color: Color(0xffBA1A1A), fontWeight: FontWeight.w400, fontFamily: 'Recoleta'),),
+                            onTap: () async {},
+                          ),
+                          Text(' or ', style: TextStyle(color: Color(0xff74777F)),),
+                          GestureDetector(
+                            child: Text('Create Account', style: TextStyle(color: Color(0xff005AC1), fontWeight: FontWeight.w400, fontFamily: 'Recoleta'),),
+                            onTap: (){
+                              context.go('/RegisterPage');
+                            },
+                          ),
+                        ]
+                      ),
+                      SizedBox(height: 300.h,)
+                    ]
+                  ),
                 ),
               )
           ),

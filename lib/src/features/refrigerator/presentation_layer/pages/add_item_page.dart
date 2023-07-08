@@ -14,7 +14,9 @@ import 'package:task_two/src/features/refrigerator/providers/refrigerator_items_
 
 
 class AddItemPage extends ConsumerWidget {
-  ItemService itemService = ItemService();
+  AddItemPage({super.key});
+
+  final ItemService itemService = ItemService();
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final itemFormGroup = ref.watch(itemFormGroupProvider);
@@ -83,11 +85,12 @@ class AddItemPage extends ConsumerWidget {
                             context.pop();
                           },
                         ),
-                        SizedBox(height: 50.h,),
+                        SizedBox(height: 200.h,),
                       ],
                     ),
                   ),
                 ),
+                //SizedBox(height: 50.h,)
               ],
             ),
           ),

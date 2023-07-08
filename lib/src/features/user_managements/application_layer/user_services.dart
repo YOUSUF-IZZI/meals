@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:reactive_forms/reactive_forms.dart';
 import 'package:task_two/src/features/user_managements/data_layer/firebase_users_repository.dart';
 import 'package:task_two/src/features/user_managements/data_layer/users_repository.dart';
@@ -24,4 +25,18 @@ class UserServices
     );
     await firebaseUserRepository.register(user: user!, context: context);
   }
+  // -------- moving from registeration page --------
+  void movingFromRegistrationPage(FormGroup registerPageFormGroup, BuildContext context){
+    if ((registerPageFormGroup.control('name').value !=null) & (registerPageFormGroup.control('surname').value !=null) & (registerPageFormGroup.control('email').value !=null) ) {
+      context.go('/RegisterPage/VerificationPage');
+    }
+  }
+  // -------- moving from verification page --------
+  void movingFromVerificationPage(FormGroup registerPageFormGroup, BuildContext context){
+    if ((registerPageFormGroup.control('password').value !=null) & (registerPageFormGroup.control('passwordConformation').value !=null) ) {
+      context.go('/RegisterPage/VerificationPage/GenderPage');
+    }
+  }
+
+
 }

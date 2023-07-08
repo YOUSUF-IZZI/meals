@@ -38,15 +38,14 @@ class AlertPage extends ConsumerWidget {
                       SizedBox(height: 4.h,),
                       //Linear Bar
                       SizedBox(height: 11.h,),
-                      Text('How many days before the\nexpiration date should we alert you', style: TextStyle(color: const Color(0xff001F29),fontSize: 22.sp, fontWeight: FontWeight.w700),textAlign: TextAlign.center,),
+                      Text('How many days before the\nexpiration date should we alert you', style: TextStyle(color: const Color(0xff001F29),fontSize: 20.sp, fontWeight: FontWeight.w700),textAlign: TextAlign.center,),
                       SizedBox(height: 25.h,),
                       const AlertSetterComponent(),
-                      SizedBox(height: 30.h,),
+                      SizedBox(height: 20.h,),
                       ProccedButton(
                           buttonName: 'Procced',
                           onPressed: () async {
                             await services.register(formProvider, context);
-                            //context.go('/RegisterPage/VerificationPage/GenderPage/SelectProfilePage/ShoppingFrequency');
                           }
                       ),
                       SizedBox(height: 90.h,)

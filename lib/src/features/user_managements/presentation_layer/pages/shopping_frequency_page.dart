@@ -35,7 +35,7 @@ class ShoppingFrequencyPage extends StatelessWidget {
                     SizedBox(height: 13.h,),
                     Text('How many time you go shopping', style: TextStyle(color: const Color(0xff575E71), fontWeight: FontWeight.w500, fontSize: 12.sp), textAlign: TextAlign.center,),
                     SizedBox(height: 35.h,),
-                    ShoppingFrequencyCards(),
+                    const ShoppingFrequencyCards(),
                     SizedBox(height: 25.h,),
                     ProccedButton(
                         buttonName: 'Next',
@@ -43,6 +43,9 @@ class ShoppingFrequencyPage extends StatelessWidget {
                           context.go('/RegisterPage/VerificationPage/GenderPage/SelectProfilePage/ShoppingFrequencyPage/AlertPage');
                         }
                     ),
+                    SizedBox(
+                      height: 50.h,
+                    )
                   ],
                 ),
               )

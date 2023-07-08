@@ -39,6 +39,7 @@ class TaskTwo extends ConsumerWidget {
           darkScheme = darkColorScheme;
         }
         return ScreenUtilInit(
+          //useInheritedMediaQuery: true,        //for keyboard problem
           designSize: const Size(375, 812),
           minTextAdapt: true,
           splitScreenMode: true,

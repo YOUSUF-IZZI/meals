@@ -13,7 +13,7 @@ import 'package:task_two/src/features/storage_tips/providers/storage_tips_provid
 
 class AddTipPage extends ConsumerWidget {
   AddTipPage({Key? key}) : super(key: key);
-  StorageTipsService storageTipsService = StorageTipsService();
+  final StorageTipsService storageTipsService = StorageTipsService();
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final tipFormGroup = ref.watch(storageTipsFormGroupProvider);
@@ -57,7 +57,7 @@ class AddTipPage extends ConsumerWidget {
                             },
                             buttonName: 'Procced'
                         ),
-                        SizedBox(height: 40.h,)
+                        SizedBox(height: 200.h,)
                       ],
                     ),
                   ),

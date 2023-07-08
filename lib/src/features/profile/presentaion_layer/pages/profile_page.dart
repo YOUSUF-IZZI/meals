@@ -3,12 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:task_two/src/common/common_components/loge_bar_component.dart';
-import 'package:task_two/src/features/profile/presentaion_layer/components/user_scores_bar.dart';
-import 'package:task_two/src/features/user_managements/presentation_layer/pages/auth_checker.dart';
 
 
 class MyProfilePage extends StatelessWidget {
-  MyProfilePage({Key? key}) : super(key: key);
+  const MyProfilePage({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -53,9 +51,9 @@ class MyProfilePage extends StatelessWidget {
               ),
               SizedBox(height: 8.h,),
               Text('Full Name', style: TextStyle(fontSize: 24.sp, fontWeight: FontWeight.w700), textAlign: TextAlign.center),
-              SizedBox(height: 8.h,),
-              const UserScoresBar(),
-              SizedBox(height: 8.h,),
+              /*SizedBox(height: 8.h,),
+              const UserScoresBar(),*/
+              SizedBox(height: 80.h,),
               ElevatedButton(
                   onPressed: () {
                     FirebaseAuth.instance.signOut();

@@ -5,12 +5,14 @@ import 'package:go_router/go_router.dart';
 import 'package:reactive_forms/reactive_forms.dart';
 import 'package:task_two/src/common/common_widgets/custom_form_field_widget.dart';
 import 'package:task_two/src/common/common_widgets/procced_button_widget.dart';
+import 'package:task_two/src/features/user_managements/application_layer/user_services.dart';
 import 'package:task_two/src/features/user_managements/presentation_layer/widgets/custom_rich_text.dart';
 import 'package:task_two/src/features/user_managements/providers/providers.dart';
 
 
 class RegisterPage extends ConsumerWidget {
-  const RegisterPage({Key? key}) : super(key: key);
+  RegisterPage({Key? key}) : super(key: key);
+  final UserServices userServices = UserServices();
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final formProvider = ref.watch(registerPageFormGroupProvider);
@@ -58,9 +60,9 @@ class RegisterPage extends ConsumerWidget {
                     SizedBox(height: 13.h,),
                     ProccedButton(
                         buttonName: 'Next',
-                        onPressed: () async{
-                          //await services.register(formProvider, context);
-                          context.go('/RegisterPage/VerificationPage');
+                        onPressed: () async {
+                          //context.go('/RegisterPage/VerificationPage');
+                          userServices.movingFromRegistrationPage(formProvider, context);
                         }
                     ),
                     SizedBox(height: 13.h,),
@@ -75,7 +77,8 @@ class RegisterPage extends ConsumerWidget {
                           },
                         )
                       ],
-                    )
+                    ),
+                    SizedBox(height: 300.h,)
                   ],
                 ),
               ),

@@ -24,14 +24,6 @@ final registerPageFormGroupProvider = Provider((ref) => FormGroup({
 }),);
 
 
-// ----------- Holding the Forms in the 'Verification page'  ----------------------------------
-/*final verificationPageFormGroupProvider = Provider.autoDispose((ref) => FormGroup({
-  'verificationCode': FormControl<String>(validators: [Validators.required, ]),
-  'password': FormControl<String>(validators: [Validators.required, ]),
-  'passwordConformation': FormControl<String>(validators: [Validators.required, ]),
-}),);*/
-
-
 // ----------- Holding the gender type  -----------
 final genderTypeProvider = StateProvider<String>((ref) {
   return 'male';
